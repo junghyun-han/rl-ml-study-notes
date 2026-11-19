@@ -15,6 +15,7 @@ p.add_argument("--steps", type=int, default=60_000)
 p.add_argument("--seed", type=int, default=0)
 p.add_argument("--lr", type=float, default=3e-4)
 p.add_argument("--ent", type=float, default=0.01)
+p.add_argument("--save", default="")          # 판 리턴 기록 파일(곡선 그리기용)
 args = p.parse_args()
 
 N_STEPS, EPOCHS, MB, GAMMA, LAM, CLIP, VF, MAX_GRAD = 2048, 10, 64, 0.99, 0.95, 0.2, 0.5, 0.5
@@ -77,3 +78,5 @@ for update in range(args.steps // N_STEPS):
 # ④ 탐험 없이 평가 (argmax 행동, 학습과 다른 시드)
 mean, std, length = evaluate(lambda o: int(actor(torch.as_tensor(o, dtype=torch.float32)).argmax()), args.env, episodes=10)
 print(f"FINAL seed {args.seed}: 평가 10판 {mean:.1f} ± {std:.1f} (평균 길이 {length:.0f})")
+if args.save:
+    np.savetxt(args.save, np.array(returns))

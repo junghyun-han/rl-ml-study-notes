@@ -14,6 +14,7 @@ p = argparse.ArgumentParser()
 p.add_argument("--env", default="Pendulum-v1")
 p.add_argument("--steps", type=int, default=15_000)
 p.add_argument("--seed", type=int, default=0)
+p.add_argument("--save", default="")          # 판 리턴 기록 파일(곡선 그리기용)
 args = p.parse_args()
 
 GAMMA, TAU, LR, BATCH, START, BUF = 0.99, 0.005, 3e-4, 256, 1000, 100_000
@@ -87,3 +88,5 @@ for step in range(1, args.steps + 1):
 pol = lambda o: actor(torch.as_tensor(o, dtype=torch.float32).unsqueeze(0))[2][0].detach().numpy()
 mean, std, length = evaluate(pol, args.env, episodes=10)
 print(f"FINAL seed {args.seed}: 평가 10판 {mean:.1f} ± {std:.1f} (평균 길이 {length:.0f})")
+if args.save:
+    np.savetxt(args.save, np.array(returns))
