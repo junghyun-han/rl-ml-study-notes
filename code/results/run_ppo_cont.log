@@ -1,0 +1,9 @@
+update  10 | step  20480 | 평가 평균   -952.3 | std 0.995
+update  20 | step  40960 | 평가 평균   -512.2 | std 0.927
+update  30 | step  61440 | 평가 평균   -172.2 | std 0.776
+update  40 | step  81920 | 평가 평균   -170.7 | std 0.707
+update  50 | step 102400 | 평가 평균   -169.3 | std 0.653
+update  60 | step 122880 | 평가 평균   -167.8 | std 0.649
+update  70 | step 143360 | 평가 평균   -167.1 | std 0.654
+update  80 | step 163840 | 평가 평균   -165.7 | std 0.634
+update  90 | step 184320 | 평가 평균   -164.4 | std 0.597

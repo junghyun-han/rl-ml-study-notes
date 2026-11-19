@@ -12,7 +12,9 @@
 | `05_RL실험_상황별_대처표.md` | 강화학습 실험에서 언제 무엇을 할지 |
 | `06_RL실험_진행순서_연습문제.md` | 실험 진행 순서(그대로 따라 하기)와 실습 연습문제 전수 목록 |
 | `07_RL실험_1쪽_요약.md` | 1쪽 요약 |
-| `code/` | 실행 코드 (`*_check.py` = 검증 스크립트) |
+| `code/` | 실행 코드 23개 + 그림 생성 `make_figures.py` (`*_check.py` = 검증 스크립트) |
+| `code/results/` | 실험 결과 원본(학습 곡선 기록, 로그) — 노트의 숫자·그림의 근거 |
+| `fig/` | 노트 그림 11장 |
 
 ## 실행
 ```bash
@@ -22,4 +24,23 @@ python 05_ppo_discrete.py          # 예: CartPole PPO
 python common_drills_check.py      # 1교시 코드 검증
 python easy_snippets_check.py      # 쉬운 설명본 코드 검증
 python extra_snippets_check.py     # 실습 추가 코드 검증
+```
+
+## 노트 안에서 부르는 이름 ↔ 파일
+| 노트 안의 이름 | 파일 |
+|---|---|
+| 쉬운 설명본 (E1~E10, R1~R12 서술형 코드) | `00_쉬운설명본_ML_DL_RL.md` |
+| 1교시 노트 (예: 12-3) | `01_ML_DL_공부노트.md` |
+| 2교시 노트 | `02_강화학습_PhysicalAI_이론노트.md` |
+| 3교시 실습노트 (예: 16-1 뼈대) | `03_강화학습_실습노트.md` |
+| 예상문제 | `04_연습문제.md` |
+| 대처표 | `05_RL실험_상황별_대처표.md` |
+| 진행 순서·예상 문제 전수 (X1~X7, W1~W5) | `06_RL실험_진행순서_연습문제.md` |
+| 코드 이름 `00`~`12` | `code/00_*.py` ~ `code/12_*.py` |
+
+## 실험 다시 돌리고 그림 다시 그리기
+```bash
+cd code
+python 02_dqn_cartpole.py --seed 0        # 결과는 results/에 저장
+python make_figures.py                    # ../fig/ 에 그림 11장
 ```

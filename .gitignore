@@ -1,4 +1,2 @@
 __pycache__/
-code/results/*
-!code/results/.gitkeep
 .DS_Store

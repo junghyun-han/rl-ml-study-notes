@@ -512,7 +512,7 @@ PyTorch 기본값: lr = 1e-3, β₁ = 0.9, β₂ = 0.999, ε = 1e-8
 ---
 
 ## 12. 주관식 대비 — 손으로 써 볼 코드와 줄별 설명 〔핵심〕
-> 1교시 주관식 = "간단한 코딩 또는 Pseudo Code"(메일). 이 장의 코드는 `실습코드/common_drills.py`(numpy), `common_arima.py`(시계열), `common_torch_loop.py`(PyTorch) 세 파일을 **첫 줄부터 끝까지 빠짐없이 그대로** 실은 것이다(조각마다 파일 이름·줄 번호 표시).
+> 1교시 주관식 = "간단한 코딩 또는 Pseudo Code"(메일). 이 장의 코드는 `code/common_drills.py`(numpy), `common_arima.py`(시계열), `common_torch_loop.py`(PyTorch) 세 파일을 **첫 줄부터 끝까지 빠짐없이 그대로** 실은 것이다(조각마다 파일 이름·줄 번호 표시).
 > 모든 함수는 `common_drills_check.py`로 scikit-learn·PyTorch·statsmodels·손계산 값과 비교해 확인했다(19개 항목 모두 통과). "이렇게 물을 수 있다"는 예상이다(기출 아님).
 
 ### 12-1. 첫머리

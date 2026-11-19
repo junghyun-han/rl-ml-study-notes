@@ -892,7 +892,7 @@
 4. **코드는 핵심 줄만 정확히**: 함수 이름·반복문·업데이트 식이 맞으면 된다. import·print는 생략 가능하다고 한 줄 적어도 됨.
 5. **의사코드(Pseudo Code)**: 파이썬처럼 들여쓰기 + 한국어 설명 섞어도 된다. 예: `for 각 특성 j: for 각 임계값 t: ...`
 
-아래 코드는 모두 `실습코드/easy_snippets.py`를 그대로 실은 것이고, `easy_snippets_check.py`로 손계산·PyTorch·이미 검증한 코드와 비교해 **26개 항목 모두 통과**했다.
+아래 코드는 모두 `code/easy_snippets.py`를 그대로 실은 것이고, `easy_snippets_check.py`로 손계산·PyTorch·이미 검증한 코드와 비교해 **26개 항목 모두 통과**했다.
 
 ## 서술형 코드 A. 1교시 (공통)
 
