@@ -7,7 +7,22 @@ import torch
 import torch.nn as nn
 import gymnasium as gym
 from torch.distributions import Categorical
-from exam_workflow import evaluate
+
+
+def evaluate(policy_fn, env_id, episodes=10, seed=1000):
+    """탐험 없는 정책으로 여러 판 평가 → (평균, 표준편차, 평균 길이). 학습과 다른 시드 사용"""
+    env = gym.make(env_id)
+    scores, lengths = [], []
+    for i in range(episodes):
+        obs, _ = env.reset(seed=seed + i)
+        done, total, n = False, 0.0, 0
+        while not done:
+            obs, r, term, trunc, _ = env.step(policy_fn(obs))
+            total += r; n += 1
+            done = term or trunc
+        scores.append(total); lengths.append(n)
+    return float(np.mean(scores)), float(np.std(scores)), float(np.mean(lengths))
+
 
 p = argparse.ArgumentParser()
 p.add_argument("--env", default="CartPole-v1")
